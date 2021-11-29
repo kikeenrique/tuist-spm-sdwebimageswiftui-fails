@@ -22,4 +22,6 @@ import ProjectDescriptionHelpers
 // Creates our project using a helper function defined in ProjectDescriptionHelpers
 let project = Project.app(name: "TuistSpmSdwebimageswiftuiFails",
                           platform: .iOS,
-                          additionalTargets: ["TuistSpmSdwebimageswiftuiFailsKit", "TuistSpmSdwebimageswiftuiFailsUI"])
+                          additionalTargets: ["TuistSpmSdwebimageswiftuiFailsKit",
+                                              "TuistSpmSdwebimageswiftuiFailsUI"],
+                          dependencies: [.external(name: "SDWebImageSwiftUI")])
