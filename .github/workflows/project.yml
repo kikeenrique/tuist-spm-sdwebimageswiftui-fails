@@ -1,0 +1,38 @@
+name: project
+
+on: ["push"]
+
+jobs:
+  build-app:
+    name: Build App
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Select Xcode 13.1
+        run: sudo xcode-select -switch /Applications/Xcode_13.1.app
+      - name: Install Tuist
+        run: |
+          bash <(curl -Ls https://install.tuist.io)
+      - name: Generate project
+        run: |
+          tuist generate
+      - name: Build App
+        run: |
+          make build-app
+  test-App:
+    name: Test App
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Select Xcode 11.4
+        run: sudo xcode-select -switch /Applications/Xcode_11.4.app
+      - name: Install Tuist
+        run: |
+          bash <(curl -Ls https://install.tuist.io)
+      - name: Generate project
+        run: |
+          tuist generate
+      - name: Test App
+        run: |
+          make test-app
+      
