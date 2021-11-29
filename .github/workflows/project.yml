@@ -5,7 +5,7 @@ on: ["push"]
 jobs:
   build-app:
     name: Build App
-    runs-on: macOS-latest
+    runs-on: macOS-11
     steps:
       - uses: actions/checkout@v1
       - name: Select Xcode 13.1
@@ -21,7 +21,7 @@ jobs:
           make build-app
   test-App:
     name: Test App
-    runs-on: macOS-latest
+    runs-on: macOS-11
     steps:
       - uses: actions/checkout@v1
       - name: Select Xcode 11.4
