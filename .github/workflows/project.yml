@@ -16,9 +16,9 @@ jobs:
       - name: Dependencies fetch
         run: |
            tuist fetch
-      - name: Generate project
-        run: |
-          tuist generate
+#      - name: Generate project
+#        run: |
+#          tuist generate
       - name: Build App
         run: |
           make build-app
